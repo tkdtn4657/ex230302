@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -11,11 +12,13 @@ public class Main {
 }
 
 class WiseSay{
-    //command() add() exit() printWiseSay() delete() inputText()
-    // 3단계가 아니라 4단계임
-
+    //command() add() exit() printWiseSay() delete() inputText() wsList()
+    //HashMap<Integer, HashMap<String, String>> result = new HashMap<Integer, HashMap<String, String>>();
     Scanner sc = new Scanner(System.in);
-    int count = 1;
+    int count = 1;//result map 변수1 아직미구현으로 일반배열로 사용
+    String[] wsString = new String[100];//result map 변수2 아직미구현으로 일반배열로 사용
+    String[] author = new String[100];//result map 변수3 아직미구현으로 일반배열로 사용
+
 
     WiseSay(){
         System.out.println("== 명언 앱 ==");
@@ -30,20 +33,36 @@ class WiseSay{
         String command = sc.nextLine();
         if(command.equals("등록")){
             System.out.print("명언 : ");
-            sc.nextLine();
+            wsString[count] = sc.nextLine();
             System.out.print("작가 : ");
-            sc.nextLine();
+            author[count] = sc.nextLine();
             System.out.println(count + "번 명언이 등록되었습니다.");
+            //result.put(count, wsString, author); // 아직미구현으로 일반배열로 사용
+
+
+            count++;
+        }
+        else if(command.equals("목록")){
+            wsList();
         }
         else if(command.equals("종료")){
             exit();
         }
     }
 
-    String inputText(){
-        String s = sc.nextLine();
-        return s;
+    void wsList(){
+        System.out.println("번호 / 작가 / 명언");
+        System.out.println("------------------------");
+        for(int i = count-1; i > 0; i--){
+            System.out.println(i + " / " + author[i] + " / " + wsString[i]);
+        }
+
     }
+
+//    String inputText(){
+//        String s = sc.nextLine();
+//        return s;
+//    }
 
     void add(){
 
