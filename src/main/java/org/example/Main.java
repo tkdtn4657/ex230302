@@ -12,6 +12,8 @@ public class Main {
 
 class WiseSay{
     //command() add() exit() printWiseSay() delete() inputText()
+    // 3단계가 아니라 4단계임
+
     Scanner sc = new Scanner(System.in);
     int count = 1;
 
