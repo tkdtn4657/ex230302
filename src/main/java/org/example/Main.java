@@ -13,7 +13,7 @@ public class Main {
 class WiseSay{
     //command() add() exit() printWiseSay() delete() inputText()
     Scanner sc = new Scanner(System.in);
-
+    int count = 1;
 
     WiseSay(){
         System.out.println("== 명언 앱 ==");
@@ -31,7 +31,7 @@ class WiseSay{
             sc.nextLine();
             System.out.print("작가 : ");
             sc.nextLine();
-
+            System.out.println(count + "번 명언이 등록되었습니다.");
         }
     }
 
