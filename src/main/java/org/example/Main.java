@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         WiseSay WiseSay = new WiseSay();
@@ -9,7 +11,9 @@ public class Main {
 }
 
 class WiseSay{
-    //command() add() exit() printWiseSay() delete()
+    //command() add() exit() printWiseSay() delete() inputText()
+    Scanner sc = new Scanner(System.in);
+
 
     WiseSay(){
         System.out.println("== 명언 앱 ==");
@@ -18,8 +22,24 @@ class WiseSay{
 
     void command(){
         System.out.print("명령) ");
+        menu(inputText());
         exit();
     }
+    void menu(String command){
+        if(command.equals("등록")){
+            System.out.print("명언 : ");
+            sc.nextLine();
+            System.out.print("작가 : ");
+            sc.nextLine();
+
+        }
+    }
+
+    String inputText(){
+        String s = sc.nextLine();
+        return s;
+    }
+
     void add(){
 
     }
@@ -34,4 +54,5 @@ class WiseSay{
 
     }
 
+    //sc.close();
 }
