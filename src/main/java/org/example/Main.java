@@ -63,9 +63,14 @@ class WiseSay{
         count++;
     }
     void delete(int n){
-        wsString[n] = "";
-        author[n] = "";
-        System.out.println(n + "번 명언이 삭제되었습니다");
+        if(wsString[n].equals("")){
+            System.out.println(n + "번 명언은 존재하지 않습니다.");
+        }
+        else {
+            wsString[n] = "";
+            author[n] = "";
+            System.out.println(n + "번 명언이 삭제되었습니다");
+        }
     }
 
     void exit(){
