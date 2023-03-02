@@ -40,6 +40,9 @@ class WiseSay{
         else if(command.equals("종료")){
             exit();
         }
+        else if(command.contains("삭제")){ // 삭제?id=1 = 7번째 인덱스 확인필요 10번 이상은 아직....모르겠다
+            delete(Integer.parseInt(command.substring(6,7)));
+        }
     }
 
     void wsList(){
@@ -59,8 +62,10 @@ class WiseSay{
         //result.put(count, wsString, author); // 아직미구현으로 일반배열로 사용
         count++;
     }
-    void delete(){
-
+    void delete(int n){
+        wsString[n] = "";
+        author[n] = "";
+        System.out.println(n + "번 명언이 삭제되었습니다");
     }
 
     void exit(){
