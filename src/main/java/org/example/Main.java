@@ -6,13 +6,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         WiseSay WiseSay = new WiseSay();
-
-
     }
 }
 
 class WiseSay{
-    //command() add() exit() printWiseSay() delete() inputText() wsList()
+    //command() add() exit() delete() inputText() wsList()
     //HashMap<Integer, HashMap<String, String>> result = new HashMap<Integer, HashMap<String, String>>();
     Scanner sc = new Scanner(System.in);
     int count = 1;//result map 변수1 아직미구현으로 일반배열로 사용
@@ -43,13 +41,20 @@ class WiseSay{
         else if(command.contains("삭제")){ // 삭제?id=1 = 7번째 인덱스 확인필요 10번 이상은 아직....모르겠다
             delete(Integer.parseInt(command.substring(6,7)));
         }
+        else if(command.contains("수정")){
+            modify(Integer.parseInt(command.substring(6,7)));
+        }
     }
 
     void wsList(){
         System.out.println("번호 / 작가 / 명언");
         System.out.println("------------------------");
         for(int i = count-1; i > 0; i--){
-            System.out.println(i + " / " + author[i] + " / " + wsString[i]);
+            if(author[i].equals("") && wsString[i].equals("")){
+
+            }else {
+                System.out.println(i + " / " + author[i] + " / " + wsString[i]);
+            }
         }
     }
 
@@ -73,11 +78,18 @@ class WiseSay{
         }
     }
 
+    void modify(int n){
+        System.out.println("명언(기존) : " + wsString[n]);
+        System.out.print("명언 : ");
+        wsString[n] = sc.nextLine();
+        System.out.println("작가(기존) : " + author[n]);
+        System.out.print("작가 : ");
+        author[n] = sc.nextLine();
+    }
+
+
     void exit(){
         System.exit(0);
-    }
-    void printWiseSay(){
-
     }
 
 
