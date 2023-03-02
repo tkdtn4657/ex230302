@@ -17,21 +17,24 @@ class WiseSay{
 
     WiseSay(){
         System.out.println("== 명언 앱 ==");
-        command();
+        while(true){
+            menu();
+        }
     }
 
-    void command(){
+
+    void menu(){
         System.out.print("명령) ");
-        menu(inputText());
-        exit();
-    }
-    void menu(String command){
+        String command = sc.nextLine();
         if(command.equals("등록")){
             System.out.print("명언 : ");
             sc.nextLine();
             System.out.print("작가 : ");
             sc.nextLine();
             System.out.println(count + "번 명언이 등록되었습니다.");
+        }
+        else if(command.equals("종료")){
+            exit();
         }
     }
 
@@ -45,7 +48,7 @@ class WiseSay{
     }
 
     void exit(){
-        System.out.println("종료");
+        System.exit(0);
     }
     void printWiseSay(){
 
