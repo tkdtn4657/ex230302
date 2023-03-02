@@ -32,15 +32,7 @@ class WiseSay{
         System.out.print("명령) ");
         String command = sc.nextLine();
         if(command.equals("등록")){
-            System.out.print("명언 : ");
-            wsString[count] = sc.nextLine();
-            System.out.print("작가 : ");
-            author[count] = sc.nextLine();
-            System.out.println(count + "번 명언이 등록되었습니다.");
-            //result.put(count, wsString, author); // 아직미구현으로 일반배열로 사용
-
-
-            count++;
+            add();
         }
         else if(command.equals("목록")){
             wsList();
@@ -56,15 +48,18 @@ class WiseSay{
         for(int i = count-1; i > 0; i--){
             System.out.println(i + " / " + author[i] + " / " + wsString[i]);
         }
-
     }
 
-//    String inputText(){
-//        String s = sc.nextLine();
-//        return s;
-//    }
-
     void add(){
+        System.out.print("명언 : ");
+        wsString[count] = sc.nextLine();
+        System.out.print("작가 : ");
+        author[count] = sc.nextLine();
+        System.out.println(count + "번 명언이 등록되었습니다.");
+        //result.put(count, wsString, author); // 아직미구현으로 일반배열로 사용
+        count++;
+    }
+    void delete(){
 
     }
 
@@ -74,9 +69,7 @@ class WiseSay{
     void printWiseSay(){
 
     }
-    void delete(){
 
-    }
 
     //sc.close();
 }
